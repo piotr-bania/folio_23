@@ -1,0 +1,171 @@
+/* ------------------------------ Fonts import ------------------------------ */
+@import url("https://use.typekit.net/wjp2kcg.css");
+
+@font-face {
+    font-family: "arkitech";
+    src: url(/public/fonts/arkitech/arkitech_light.ttf);
+}
+
+/* ------------------------------ Variables ------------------------------ */
+$purple: #7161F5;
+$green: #61F570;
+$red: #F57061;
+$grey: #ABABAB;
+$darker: #040117;
+$dark: #07032E;
+$off_white: #F5F4FE;
+$white: #FFFFFF;
+
+// ---------- Fonts ----------
+$header_font: 'ethnocentric',
+sans-serif;
+$text_font: 'kallisto',
+sans-serif;
+
+// ---------- Fluid fonts ----------
+$paragraph: clamp(0.88rem, 0.23vw + 0.82rem, 1rem);
+$header_4: clamp(1.05rem, 0.65vw + 0.89rem, 1.41rem);
+$header_3: clamp(1.26rem, 1.32vw + 0.93rem, 1.99rem);
+$header_2: clamp(1.51rem, 2.35vw + 0.93rem, 2.8rem);
+$header_1: clamp(1.81rem, 3.89vw + 0.84rem, 3.95rem);
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    list-style-type: none;
+}
+
+body {
+    background: linear-gradient(90deg, $darker, $dark);
+    color: $off_white;
+    font-family: $text_font;
+    font-size: $paragraph;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.25), 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+canvas {
+    height: 100vh;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $header_font;
+    line-height: 0.75;
+    color: $off_white;
+    margin: 10px auto;
+}
+
+h1 {
+    font-size: $header_1;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: $header_2;
+    font-weight: 500;
+    color: $red;
+}
+
+h3 {
+    font-size: $header_3;
+    font-weight: 500;
+    color: $green;
+}
+
+h4 {
+    font-size: $header_4;
+    font-weight: 500;
+    color: $purple;
+}
+
+p {
+    font-size: $paragraph;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $off_white;
+}
+
+a {
+    font-family: $text_font;
+    font-size: $paragraph;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $off_white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $green;
+    }
+
+    &:focus {
+        color: $red;
+    }
+}
+
+// ------------------------------ Strips ------------------------------
+.strip {
+    position: fixed;
+    width: 1px;
+    height: 100vh;
+    background: linear-gradient(180deg, $white 0%, $dark 100%);
+    opacity: 0.25;
+    z-index: 50;
+}
+
+.one {
+    left: 25%;
+    top: 0;
+}
+
+.two {
+    left: 50%;
+    top: 0;
+}
+
+.three {
+    right: 25%;
+    top: 0;
+}
+
+// ------------------------------ Buttons ------------------------------
+
+
+// ------------------------------ Sections ------------------------------
+section {
+    display: grid;
+}
+
+// ------------------------------ Desktop ------------------------------
+@media screen and (min-width: 1280px) {
+    section {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+// ------------------------------ Tablet ------------------------------
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    section {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+// ------------------------------ Smartphone ------------------------------
+@media screen and (max-width: 767px) {
+    section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

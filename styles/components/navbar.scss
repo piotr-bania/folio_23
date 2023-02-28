@@ -1,0 +1,51 @@
+@import '/styles/globals';
+
+#navbar {
+    position: absolute;
+    top: 0;
+    .wrapper {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+    
+            li {
+                a {
+                    padding: 0 1vw;
+                }
+            }
+        }
+    }
+}
+
+/* ------------------------------ Desktop ------------------------------ */
+@media screen and (min-width: 1024px) {
+    #navbar {     
+        .wrapper {
+            width: calc(100% - 180px);
+        }
+    }
+}
+
+/* ------------------------------ Tablet ------------------------------ */
+@media screen and (min-width: 768) and (max-width: 1023px) {
+    #navbar {
+        .wrapper {
+            width: calc(100% - 100px);
+        }
+    }
+}
+
+/* ------------------------------ Smartphone ------------------------------ */
+@media screen and (max-width: 767px) {
+    #navbar {
+        .wrapper {
+            width: calc(100% - 20px);
+        }
+    }
+}
