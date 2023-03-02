@@ -8,8 +8,8 @@ import { DirectionalLight } from 'three'
 
 const Plane = () => {
 
-    const { scale } = useControls({ scale: 0.25 })
-    const { position } = useControls({ position: [0, 0, -1.5] })
+    const { scale } = useControls({ scale: 0.3 })
+    const { position } = useControls({ position: [0.3, 0, -1.5] })
 
     const planeRef = useRef()
     const cubeRef = useRef()
@@ -21,19 +21,19 @@ const Plane = () => {
     })
 
     const plane = useLoader(GLTFLoader, '/models/plane/plane.gltf')
-    const model_1 = useLoader(GLTFLoader, '/models/model.glb')
+    const model_1 = useLoader(GLTFLoader, '/models/cube.glb')
 
     return (
         <>
-            {/* <ambientLight intensity={0.5} color={'#ffffff'} /> */}
-            <directionalLight color="#FFFFFF" intensity={0.5} position={[-4, 0, 0]} />
+            {/* <ambientLight intensity={0.995} color={'#ffffff'} /> */}
+            {/* <directionalLight color="#FFFFFF" intensity={0.5} position={[-4, 0, 0]} />
             <directionalLight color="#FFFFFF" castShadow intensity={0.5} position={[4, 0, 0]} />
-            <directionalLight color="#FFFFFF" castShadow intensity={0.5} position={[0, 4, 1]} />
+            <directionalLight color="#FFFFFF" castShadow intensity={0.5} position={[0, 4, 1]} /> */}
 
-            <mesh ref={planeRef} castShadow receiveShadow scale={scale} position={position} >
+            {/* <mesh ref={planeRef} castShadow receiveShadow scale={scale} position={position} >
                 <primitive object={plane.scene}/>
                 <meshStandardMaterial attach="material" />
-            </mesh>
+            </mesh> */}
 
 
             <mesh ref={cubeRef} castShadow receiveShadow scale={scale} position={position} >

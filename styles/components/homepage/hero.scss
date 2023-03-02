@@ -1,0 +1,72 @@
+@import '/styles/globals';
+
+#hero {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .heading, .subheading, .cta {
+        display: flex;
+        align-self: flex-end;
+        width: 100%;
+    }
+}
+
+/* ------------------------------ Desktop ------------------------------ */
+@media screen and (min-width: 1280px) {
+    #hero {
+        grid-template-rows: 1fr auto auto;
+        
+        .heading {
+            grid-area: 1 / 2 / 2 / 10;
+        }
+
+        .subheading {
+            grid-area: 2 / 2 / 3 / 8;
+        }
+
+        .cta {
+            grid-area: 3 / 2 / 4 / 6;
+        }
+    }
+}
+
+/* ------------------------------ Tablet ------------------------------ */
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    #hero {
+        grid-template-rows: 1fr auto auto;
+        
+        .heading {
+            grid-area: 1 / 2 / 2 / 9;
+        }
+
+        .subheading {
+            grid-area: 2 / 2 / 3 / 8;
+        }
+
+        .cta {
+            grid-area: 3 / 2 / 4 / 7;
+        }
+    }
+}
+
+/* ------------------------------ Smartphone ------------------------------ */
+@media screen and (max-width: 767px) {
+    #hero {
+        grid-template-rows: 1fr auto auto;
+        
+        .heading {
+            grid-area: 1 / 1 / 2 / 7;
+        }
+
+        .subheading {
+            grid-area: 2 / 1/ 3 / 6;
+        }
+
+        .cta {
+            grid-area: 3 / 1 / 4 / 5;
+        }
+    }
+}
