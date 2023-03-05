@@ -2,7 +2,7 @@
 
 #navbar {
     position: absolute;
-    top: 0;
+    z-index: 100;
     .wrapper {
         position: fixed;
         display: flex;
@@ -25,7 +25,9 @@
 
 /* ------------------------------ Desktop ------------------------------ */
 @media screen and (min-width: 1024px) {
-    #navbar {     
+    #navbar {
+        top: 20px;
+        left: 90px;
         .wrapper {
             width: calc(100% - 180px);
         }
@@ -35,6 +37,9 @@
 /* ------------------------------ Tablet ------------------------------ */
 @media screen and (min-width: 768) and (max-width: 1023px) {
     #navbar {
+        top: 15px;
+        left: 50px;
+
         .wrapper {
             width: calc(100% - 100px);
         }
@@ -44,6 +49,8 @@
 /* ------------------------------ Smartphone ------------------------------ */
 @media screen and (max-width: 767px) {
     #navbar {
+        top: 10px;
+        left: 10px;
         .wrapper {
             width: calc(100% - 20px);
         }

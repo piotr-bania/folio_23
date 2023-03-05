@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import Head from 'next/head'
 import { motion as m } from 'framer-motion'
 import Experience from '../components/homepage/Experience'
+import Hero from '../components/homepage/Hero'
 
 export default function Home() {
     return (
@@ -22,7 +23,8 @@ export default function Home() {
                     ease: 'easeInOut',
                     delay: 0.25
                 }}
-            >                
+            >
+                {/* <Hero /> */}
                 <Experience />
             </m.main>
         </>

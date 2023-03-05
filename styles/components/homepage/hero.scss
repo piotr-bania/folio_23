@@ -7,10 +7,22 @@
     justify-content: flex-start;
     align-items: flex-end;
 
-    .heading, .subheading, .cta {
+    .name, .heading, .subheading, .cta {
         display: flex;
         align-self: flex-end;
         width: 100%;
+    }
+
+    .name {
+        margin-bottom: 0;
+    }
+
+    .heading {
+        margin-bottom: 30px;
+    }
+
+    .cta {
+        margin-bottom: 40px;
     }
 }
 
@@ -19,16 +31,20 @@
     #hero {
         grid-template-rows: 1fr auto auto;
         
-        .heading {
+        .name {
             grid-area: 1 / 2 / 2 / 10;
         }
 
+        .heading {
+            grid-area: 2 / 2 / 3 / 10;
+        }
+
         .subheading {
-            grid-area: 2 / 2 / 3 / 8;
+            grid-area: 3 / 2 / 4 / 8;
         }
 
         .cta {
-            grid-area: 3 / 2 / 4 / 6;
+            grid-area: 4 / 2 / 5 / 6;
         }
     }
 }
@@ -38,16 +54,20 @@
     #hero {
         grid-template-rows: 1fr auto auto;
         
+        .name {
+            grid-area: 1 / 2 / 2 / 10;
+        }
+
         .heading {
-            grid-area: 1 / 2 / 2 / 9;
+            grid-area: 2 / 2 / 3 / 9;
         }
 
         .subheading {
-            grid-area: 2 / 2 / 3 / 8;
+            grid-area: 3 / 2 / 4 / 8;
         }
 
         .cta {
-            grid-area: 3 / 2 / 4 / 7;
+            grid-area: 4 / 2 / 5 / 7;
         }
     }
 }
