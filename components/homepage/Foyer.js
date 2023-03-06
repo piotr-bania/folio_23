@@ -3,7 +3,8 @@ import { useFrame, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useControls } from 'leva'
 import * as THREE from 'three'
-import { OrbitControls } from '@react-three/drei'
+import { useHelper, OrbitControls, MeshReflectorMaterial } from '@react-three/drei'
+import { PointLightHelper, SpotLightHelper } from 'three'
 
 function Foyer() {
 
@@ -14,27 +15,38 @@ function Foyer() {
     const foyer = useLoader(GLTFLoader, '/models/foyer/foyer.glb')
     const foyerRef = useRef()
 
+    const pointL = useRef()
+    // useHelper(pointL, PointLightHelper, 1, '#EA2FFA')
+
     return (
         <>
             <OrbitControls
                 rotateSpeed={0.12}
                 enableZoom={true}
-                minDistance={15}
-                maxDistance={60}
-                minZoom={0}
-                maxZoom={1}
+                minDistance={13}
+                maxDistance={60}     
                 minAzimuthAngle={-Math.PI / 4}
                 maxAzimuthAngle={Math.PI / 4}
                 minPolarAngle={Math.PI / 90}
                 maxPolarAngle={Math.PI - Math.PI / 2}
             />
 
-            <ambientLight intensity={0.05} color={'#ffffff'} />
-            <directionalLight intensity={0.75}/>
+            {/* <ambientLight /> */}
+            {/* <hemisphereLight /> */}
+            {/* <directionalLight /> */}
+            {/* <pointLight /> */}
+            <spotLight power={3} distance={30} />
+            {/* <rectAreaLight /> */}
+
+            <ambientLight intensity={0.5} />
+            <directionalLight intensity={0.5} />
+            <pointLight ref={pointL} intensity={7} position={[-8, -1, 0]}color={'#7161F5'} distance={5} decay={1.5} />
+            <pointLight ref={pointL} intensity={7} position={[8, 0.5, 0]}color={'#7161F5'} distance={5} decay={1.5} />
+            <pointLight ref={pointL} intensity={7} position={[ 0, -1, -8]}color={'#61F570'} distance={5} decay={1.5} />
+            <pointLight ref={pointL} intensity={7} position={[ 0, 2, 9]}color={'#F5F4FE'} distance={5} decay={1.5} />
 
             <mesh ref={foyerRef} castShadow receiveShadow scale={scale} position={position} rotation={rotation}>
                 <primitive object={foyer.scene}/>
-                <meshStandardMaterial />
             </mesh>
         </>
     )
