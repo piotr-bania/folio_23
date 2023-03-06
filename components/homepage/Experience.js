@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { AnimatePresence, motion as m } from 'framer-motion'
-import { Fog } from 'three'
 import Foyer from './Foyer'
 
 const Experience = () => {
@@ -15,14 +14,11 @@ const Experience = () => {
                 >
                 <Canvas
                     shadows dpr={[1, 2]}
-                    onCreated={(state) => {
-                        state.gl.setClearColor('#07032E')
-                        state.scene.fog = new Fog('#07032E', 1, 70)
-                    }}
                     camera={{
                         position: [0, 15, 35],
                         fov: 22 }}
                     >
+                    <fog attach="fog" args={['#040117', 1, 120]} />
                     <Suspense fallback={null}>
                         <Foyer />
                     </Suspense>

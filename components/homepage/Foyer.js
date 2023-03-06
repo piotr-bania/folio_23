@@ -35,17 +35,22 @@ function Foyer() {
             {/* <hemisphereLight /> */}
             {/* <directionalLight /> */}
             {/* <pointLight /> */}
-            <spotLight power={3} distance={30} />
+            {/* <spotLight /> */}
             {/* <rectAreaLight /> */}
 
-            <ambientLight intensity={0.5} />
-            <directionalLight intensity={0.5} />
-            <pointLight ref={pointL} intensity={7} position={[-8, -1, 0]}color={'#7161F5'} distance={5} decay={1.5} />
-            <pointLight ref={pointL} intensity={7} position={[8, 0.5, 0]}color={'#7161F5'} distance={5} decay={1.5} />
-            <pointLight ref={pointL} intensity={7} position={[ 0, -1, -8]}color={'#61F570'} distance={5} decay={1.5} />
-            <pointLight ref={pointL} intensity={7} position={[ 0, 2, 9]}color={'#F5F4FE'} distance={5} decay={1.5} />
+            <ambientLight intensity={0.005} />
+            <directionalLight intensity={0.005} />
+            <pointLight ref={pointL} intensity={2} position={[-8, 0, 0]}color={'#7161F5'} distance={5} decay={1.5} />
+            <pointLight ref={pointL} intensity={2} position={[8, 0.5, 0]}color={'#7161F5'} distance={5} decay={1.5} />
+            <pointLight ref={pointL} intensity={2} position={[ 0, 1, -7]}color={'#61F570'} distance={5} decay={1.5} />
+            <pointLight ref={pointL} intensity={2} position={[ 0, 2, 9]}color={'#61F570'} distance={5} decay={1.5} />
+            <pointLight ref={pointL} intensity={2} position={[ 0, -2, 0]}color={'#FFFFFF'} distance={8} decay={1.5} />
 
-            <mesh ref={foyerRef} castShadow receiveShadow scale={scale} position={position} rotation={rotation}>
+            <mesh ref={foyerRef}
+                scale={scale} position={position} rotation={rotation}
+                castShadow
+                receiveShadow
+                >
                 <primitive object={foyer.scene}/>
             </mesh>
         </>
