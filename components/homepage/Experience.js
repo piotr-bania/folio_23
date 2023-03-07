@@ -18,7 +18,7 @@ const Experience = () => {
                         position: [0, 15, 35],
                         fov: 22 }}
                     >
-                    {/* <fog attach="fog" args={['#040117', 1, 120]} /> */}
+                    {/* <fog attach="fog" args={['#07032E', 1, 120]} /> */}
                     <Suspense fallback={null}>
                         <Foyer />
                     </Suspense>
