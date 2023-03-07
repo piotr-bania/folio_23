@@ -1,9 +1,8 @@
-import React, { useRef } from 'react'
+import React, { Suspense, useRef } from 'react'
 import { useFrame, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useControls } from 'leva'
-import * as THREE from 'three'
-import { useHelper, OrbitControls, Environment, Lightformer } from '@react-three/drei'
+import { useHelper, OrbitControls, Environment, useVideoTexture } from '@react-three/drei'
 import { PointLightHelper, SpotLightHelper } from 'three'
 
 function Foyer() {
@@ -14,9 +13,11 @@ function Foyer() {
 
     const foyer = useLoader(GLTFLoader, '/models/foyer/foyer_entrance.glb')
     const foyerRef = useRef()
-
+    console.log(foyer.nodes.projector.position)
     const pointL = useRef()
     // useHelper(pointL, PointLightHelper, 1, '#EA2FFA')
+
+    const videoTexture = useVideoTexture('./videos/graveyard.mp4')
 
     return (
         <>
@@ -57,6 +58,16 @@ function Foyer() {
                 receiveShadow
                 >
                 <primitive object={foyer.scene}/>
+            </mesh>
+
+            <mesh
+                position={[5.3, 1.75, -4.35]}
+                rotation={[0, -0.79, 0]}
+                >
+                <planeGeometry args={[4.5, 3.36]} />
+                <Suspense>
+                    <meshBasicMaterial map={videoTexture} />
+                </Suspense>
             </mesh>
         </>
     )
