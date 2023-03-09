@@ -13,7 +13,7 @@ function Foyer() {
 
     const foyer = useLoader(GLTFLoader, '/models/foyer/foyer_entrance.glb')
     const foyerRef = useRef()
-    console.log(foyer.nodes.projector.position)
+    // console.log(foyer.nodes.projector.position, foyer.nodes.projector.rotation)
     const pointL = useRef()
     // useHelper(pointL, PointLightHelper, 1, '#EA2FFA')
 
@@ -61,7 +61,7 @@ function Foyer() {
             </mesh>
 
             <mesh
-                position={[5.3, 1.75, -4.35]}
+                position={[5.31, 1.75, -4.36]}
                 rotation={[0, -0.79, 0]}
                 >
                 <planeGeometry args={[4.5, 3.36]} />
